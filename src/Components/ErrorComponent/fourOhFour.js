@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-export default fourOhFour = () => {
-    render(
+const fourOhFour = () => {
+    return(
         <div>
             <h1>Error</h1>
         </div>
         
     )
 }
+
+export default fourOhFour;
