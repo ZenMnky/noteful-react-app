@@ -21,6 +21,7 @@ import SideBarAddFolder from '../Sidebar/SideBarAddFolder';
 import fourOhFour from '../ErrorComponent/fourOhFour';
 
 // Styles
+import 'normalize.css';
 import './css/App.css';
 
 // Logic
