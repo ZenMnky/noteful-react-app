@@ -1,6 +1,9 @@
 // Dependencies
 import React, { Component } from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
+import DATA from '../../dummy-store';
+
+
 
 
 // View: Main
@@ -26,8 +29,9 @@ import './css/App.css';
 
 // Logic
 class App extends Component {
-  render()
-  {
+
+  render() {
+    
     return (
     <div className="App">
       <header className="App-header">
@@ -36,26 +40,27 @@ class App extends Component {
         </Link>
       </header>
       <main>
-        <section className="mainContent">
-          <Switch>
-            <Route exact path='/' component={MainMain}/>
-            <Route path='/folder/:folderid' component={MainFolder} />
-            <Route path='/note/:noteid' component={MainNote} />
-            <Route path='/AddNote' component={MainAddNote} />
-            <Route path='/AddFolder' component={MainAddFolder} />
-            <Route compoent={fourOhFour} />
-          </Switch>
-        </section>
-        <section classname="sideBar">
-          <Switch>
-            <Route exact path='/' component={SideBarMain}/>
-            <Route path='/folder/:folderid' component={SideBarFolder} />
-            <Route path='/note/:noteid' component={SideBarNote} />
-            <Route path='/AddNote' component={SideBarAddNote} />
-            <Route path='/AddFolder' component={SideBarAddFolder} />
-            <Route component={SideBarMain} />
-          </Switch>
-        </section>
+
+          <section className="mainContent">
+            <Switch>
+              <Route exact path='/' component={MainMain}/>
+              <Route path='/folder/:folderid' component={MainFolder} />
+              <Route path='/note/:noteid' component={MainNote} />
+              <Route path='/AddNote' component={MainAddNote} />
+              <Route path='/AddFolder' component={MainAddFolder} />
+              <Route compoent={fourOhFour} />
+            </Switch>
+          </section>
+          <section classname="sideBar">
+            <Switch>
+              <Route exact path='/' component={SideBarMain}/>
+              <Route path='/folder/:folderid' component={SideBarFolder} />
+              <Route path='/note/:noteid' component={SideBarNote} />
+              <Route path='/AddNote' component={SideBarAddNote} />
+              <Route path='/AddFolder' component={SideBarAddFolder} />
+              <Route component={SideBarMain} />
+            </Switch>
+          </section>
 
       </main>
     </div>
