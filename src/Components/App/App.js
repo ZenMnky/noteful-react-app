@@ -38,7 +38,7 @@ class App extends Component {
         <section className="mainContent">
           <Switch>
             <Route exact path='/' component={MainMain}/>
-            <Route path='/folder/:folderid' component={MainFolder} />
+            <Route path='/folder/:folderidfolder/:folderid' component={MainFolder} />
             <Route path='/note/:noteid' component={MainNote} />
             <Route path='/AddNote' component={MainAddNote} />
             <Route path='/AddFolder' component={MainAddFolder} />
