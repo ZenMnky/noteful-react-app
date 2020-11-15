@@ -10,14 +10,16 @@ class SideBarMain extends Component{
                 {context => {
                 let folderLinks = context.folders.map(folder => {
                     return(
-                        <NavLink 
-                            to={`/folder/${folder.id}`}
-                            key={folder.id}
-                        >
-                        <li id={folder.id}>
-                            {folder.name}                   
-                        </li>
-                    </NavLink>
+                        // <li id={folder.id}>
+                            <NavLink 
+                                to={`/folder/${folder.id}`}
+                                key={folder.id}
+                            >
+                            
+                                {folder.name}                   
+                            
+                            </NavLink>
+                        // </li>
                     )
                 })
 

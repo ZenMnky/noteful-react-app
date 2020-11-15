@@ -1,7 +1,7 @@
 /*----------  Sidebar  ----------*/
-/* remove default styling attached to ul and li tags */
+/* remove default styling attached to ul and a tags */
 
-.sideBar ul, li {
+.sideBar ul, a {
     list-style: none;
     list-style-position: inside;
     margin: 0;
@@ -9,24 +9,21 @@
     text-decoration: none;
 }
 
-a, li {
+a {
     text-decoration: none;
-    list-style-type: none;
+    list-style-type: none;    
 }
 
-a, li {
-    text-decoration: none;
-    list-style-type: none;
-}
 
 .sideBar a:visited {
     color: inherit;
 }
 
 /* custom formatting */
-.sideBar li {
+.sideBar a {
     padding: 10px 0;
     border: 1px solid black;
+    display: block;
 }
 
 .sideBar {
