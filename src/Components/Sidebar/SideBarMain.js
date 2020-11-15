@@ -11,7 +11,7 @@ class SideBarMain extends Component{
                 let folderLinks = context.folders.map(folder => {
                     return(
                         <NavLink 
-                            to={`/folder/${folder.name}`}
+                            to={`/folder/${folder.id}`}
                             key={folder.id}
                         >
                         <li id={folder.id}>
