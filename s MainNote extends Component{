@@ -1,0 +1,97 @@
+[33mcommit fdbff61b302796389842331c78f545a0653c4985[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sun Nov 15 10:21:35 2020 -0800
+
+    add modecum of stylying. Still needs a fix
+
+[33mcommit e23438820c1a3a9519afab0c28fd74eed64022ab[m
+Merge: 797689b 1b93d13
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sun Nov 15 10:15:14 2020 -0800
+
+    Merge branch 'dynamicNotes'
+
+[33mcommit 1b93d1395681846a58c8a074cca1bd350d397559[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sun Nov 15 10:15:01 2020 -0800
+
+    dynamic display selected note & dynamic display of notes by folder
+
+[33mcommit 797689b14421be442bbf82e8f0fbc4a98f22418c[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sun Nov 15 09:41:46 2020 -0800
+
+    Add NavLink to Sidebar
+
+[33mcommit 78b7e93e853eb01027b04950608404f25a983dbb[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 14:38:32 2020 -0800
+
+    indicates development status
+
+[33mcommit 4f1632ffad930e18d7ead0741961243fdc6320c8[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 14:35:31 2020 -0800
+
+    provides minimals to README
+
+[33mcommit e1a5ed72ae8d44f4995b7d895e40ce92c380c39f[m
+Merge: a3b240d 2f997b1
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 14:33:35 2020 -0800
+
+    Merge branch 'setupContext'
+
+[33mcommit 2f997b19d48ecb42f16e1bba65473c5f27aba4a4[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 14:33:12 2020 -0800
+
+    adds all notes to Main view
+
+[33mcommit 762085eafee4cb0364f6930ff9ebbef6142f8429[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 14:25:13 2020 -0800
+
+    sets up provider module
+
+[33mcommit a3b240db1fc53086f3e428b58ed5293ec41228e7[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 12:52:59 2020 -0800
+
+    adds store data
+
+[33mcommit 0dfdb27a2f1fdde3e7e4974c9c1c8198c6b66f24[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 12:51:01 2020 -0800
+
+    add normalize.css
+
+[33mcommit be431672f3bc5cf54721cc0a31dedfc03a16d139[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 12:49:22 2020 -0800
+
+    fixes routing
+
+[33mcommit 121857847ada4de67556ad58749c72f1ab2c1373[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 12:47:41 2020 -0800
+
+    fixes routing
+
+[33mcommit 4a10b23fa948afa45fcfc7ce6d20dc95b1e72214[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 12:47:31 2020 -0800
+
+    fixes routing
+
+[33mcommit da71868bde0b47bb4eea093f722a54642b2a8f48[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 12:26:11 2020 -0800
+
+    Initial app structure
+
+[33mcommit ec00f0a75ced7230364274cf6a185896dd405199[m
+Author: Justin Hager <coachjustinhager@gmail.com>
+Date:   Sat Nov 14 11:37:57 2020 -0800
+
+    Initialize project using Create React App

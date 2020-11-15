@@ -6,7 +6,7 @@ class MainNote extends Component{
     render(){
         return(
             <Consumer>
-                {({notes}) => {
+                {({notes, handleDeleteNote}) => {
                     let {noteid} = this.props.match.params;
                     let selectedNote = notes.find(note => note.id === noteid);
                     console.log(selectedNote);
@@ -14,7 +14,8 @@ class MainNote extends Component{
                     let {
                         name,
                         modified,
-                        content
+                        content,
+                        id
                     } = selectedNote;
 
 
@@ -23,7 +24,10 @@ class MainNote extends Component{
                             <div className="noteListItem" >
                                 <h2>{name}</h2>
                                 <p>Last modified: { moment({modified}).calendar() }</p>
-                                <input type='button' value='Delete Note' />
+                                <input onClick={() => {
+                                    handleDeleteNote(id)
+                                    this.props.history.push('/');
+                                }} type='button' value='Delete Note' />
                             </div>
                             <div className="noteListItem-content">
                                 <p>{content}</p>

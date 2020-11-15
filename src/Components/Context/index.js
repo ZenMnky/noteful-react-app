@@ -19,9 +19,22 @@ export class Provider extends Component {
       })
     }
     
+    handleDeleteNote = (id) => {
+      // this.props.history.push('/')
+
+      this.setState(prevState => {
+        return {
+          notes: prevState.notes.filter(note => note.id !== id)
+        }
+      
+      })
+
+    }
+
     render(){
         const contextValues = {
-            ...this.state
+            ...this.state,
+            handleDeleteNote: this.handleDeleteNote
         }
 
         return(
