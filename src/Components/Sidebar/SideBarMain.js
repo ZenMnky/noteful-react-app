@@ -24,11 +24,11 @@ class SideBarMain extends Component{
                 return(
                         
                     <div id="sidebar">
-                        <h3>Sidebar Main</h3>
                         <ul>
                             {folderLinks}
                         </ul>
-                        <input type="button" value="Add Folder"></input>
+                        <input type="button" value="Add Folder" />
+                        <input type="button" value="Add Note" />
                     </div>
                 
                     )

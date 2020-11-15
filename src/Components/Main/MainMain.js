@@ -22,8 +22,8 @@ class MainMain extends Component{
                     })
                     return(
                         <div>
-                            <h1>Main Main</h1>
                             {noteList}
+                            <input type="button" value="Add Note" />
                         </div>
                     );
                 }}

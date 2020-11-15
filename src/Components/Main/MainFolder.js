@@ -21,7 +21,6 @@ class MainFolder extends Component{
 
                     return (
                         <div>
-                            <h1>MainFolder</h1>
                             {noteItems}
                         </div>
                     );
