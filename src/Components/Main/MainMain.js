@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Consumer} from '../Context'
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 class MainMain extends Component{
@@ -10,7 +11,7 @@ class MainMain extends Component{
                     let notes = context.notes.map(note => {
                         return(
                             <div className="noteListItem" >
-                                <h2>{note.name}</h2>
+                                <Link to={`/note/${note.id}`}><h2>{note.name}</h2></Link>
                                 <p>Last modified: { moment(note.modified).calendar() }</p>
                                 <input type='button' value='Delete Note' />
                             </div>

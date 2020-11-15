@@ -1,11 +1,32 @@
 import React, {Component} from 'react';
-
+import {Consumer} from '../Context';
+import moment from 'moment';
+import {Link} from 'react-router-dom';
 class MainFolder extends Component{
     render(){
         return(
-            <div>
-                <h1>MainFolder</h1>
-            </div>
+            <Consumer>
+                {context => {
+                    //do stuff
+                    let {folderid} = this.props.match.params;
+                    let folderNotes = context.notes.filter(note => note.folderId === folderid);
+                    let noteItems = folderNotes.map(note => {
+                        return(
+                            <div className="noteListItem" >
+                                <Link to={`/note/${note.id}`}><h2>{note.name}</h2></Link>
+                                <p>Last modified: { moment(note.modified).calendar() }</p>
+                                <input type='button' value='Delete Note' />
+                            </div>
+                        )});
+
+                    return (
+                        <div>
+                            <h1>MainFolder</h1>
+                            {noteItems}
+                        </div>
+                    );
+                }}
+            </Consumer>
         )
     }
 }
