@@ -38,9 +38,9 @@ class App extends Component {
           <h1>Noteful</h1>
         </Link>
       </header>
-      <main>
+      <main className="flexContainer">
 
-          <section className="mainContent">
+          <section className="mainContent NoteContainer">
             <Switch>
               <Route exact path='/' component={MainMain}/>
               <Route path='/folder/:folderid' component={MainFolder} />
