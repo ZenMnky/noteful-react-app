@@ -26,8 +26,8 @@ class MainNote extends Component{
                                 <p>Last modified: { moment({modified}).calendar() }</p>
                                 <input onClick={() => {
                                     handleDeleteNote(id)
-                                    this.props.history.push('/')
-                                    }} type='button' value='Delete Note' />
+                                    this.props.history.push('/');
+                                }} type='button' value='Delete Note' />
                             </div>
                             <div className="noteListItem-content">
                                 <p>{content}</p>

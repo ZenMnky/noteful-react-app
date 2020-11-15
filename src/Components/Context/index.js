@@ -20,7 +20,7 @@ export class Provider extends Component {
     }
     
     handleDeleteNote = (id) => {
-      this.props.history.push('/')
+      // this.props.history.push('/')
 
       this.setState(prevState => {
         return {
