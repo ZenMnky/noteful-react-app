@@ -47,10 +47,10 @@ class App extends Component {
               <Route path='/note/:noteid' component={MainNote} />
               <Route path='/AddNote' component={MainAddNote} />
               <Route path='/AddFolder' component={MainAddFolder} />
-              <Route compoent={fourOhFour} />
+              <Route component={fourOhFour} />
             </Switch>
           </section>
-          <section classname="sideBar">
+          <section className="sideBar">
             <Switch>
               <Route exact path='/' component={SideBarMain}/>
               <Route path='/folder/:folderid' component={SideBarMain} />
