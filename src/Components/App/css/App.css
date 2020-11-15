@@ -26,6 +26,9 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
+/* .sideBar {
+    order: -1;
+} */
 
 /*----------  NoteContainer  ----------*/
 .NoteContainer {
@@ -46,43 +49,6 @@ h1, h2, h3 {
     padding: 20px 0;   
 }
 
-
-/*----------  Sidebar  ----------*/
-/* remove default styling attached to ul and li tags */
-.sidebar ul, li {
-    list-style: none;
-    list-style-position: inside;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
-
-/* custom formatting */
-.sidebar li {
-    padding: 10px 0;
-    border: 1px solid black;
-}
-
-.sidebar {
-    background-color: grey;
-    order: -1;
-}
-
-.sidebar input[type="button"] {
-    margin-top: 20px;
-    border-radius: 8px;
-    width: 90%;
-    padding: 20px 0;
-
-    
-}
-
-@media all and (min-width: 800px){
-    .sidebar{
-        height: 100vh;
-        min-width: 25vw;
-    }
-  }
 
 /*----------  other / flex  ----------*/
 

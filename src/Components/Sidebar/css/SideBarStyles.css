@@ -1,8 +1,60 @@
-.active {
-    font-size: large;
+/*----------  Sidebar  ----------*/
+/* remove default styling attached to ul and li tags */
+
+.sideBar ul, li {
+    list-style: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
 a, li {
     text-decoration: none;
     list-style-type: none;
 }
+
+a, li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.sideBar a:visited {
+    color: inherit;
+}
+
+/* custom formatting */
+.sideBar li {
+    padding: 10px 0;
+    border: 1px solid black;
+}
+
+.sideBar {
+    background-color: grey;
+    order: -1;
+}
+
+.sideBar input[type="button"] {
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 90%;
+    padding: 20px 0;
+
+    
+}
+
+@media all and (min-width: 800px){
+    .sideBar{
+        height: 100vh;
+        min-width: 25vw;
+    }
+  }
+
+
+
+
+.active {
+    font-size: large;
+    background: whitesmoke;
+}
+
