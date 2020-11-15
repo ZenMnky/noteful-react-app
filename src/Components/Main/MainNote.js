@@ -9,7 +9,6 @@ class MainNote extends Component{
                 {({notes, handleDeleteNote}) => {
                     let {noteid} = this.props.match.params;
                     let selectedNote = notes.find(note => note.id === noteid);
-                    console.log(selectedNote);
 
                     let {
                         name,

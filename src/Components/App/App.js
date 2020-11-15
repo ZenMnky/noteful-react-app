@@ -14,7 +14,7 @@ import MainAddFolder from '../Main/MainAddFolder';
 
 // View: SideBar
 import SideBarMain from '../Sidebar/SideBarMain';
-// import SideBarNote from '../Sidebar/SideBarNote';
+import SideBarNote from '../Sidebar/SideBarNote';
 // import SideBarFolder from '../Sidebar/SideBarFolder';
 // import SideBarAddNote from '../Sidebar/SideBarAddNote';
 // import SideBarAddFolder from '../Sidebar/SideBarAddFolder';
@@ -54,7 +54,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={SideBarMain}/>
               <Route path='/folder/:folderid' component={SideBarMain} />
-              <Route path='/note/:noteid' component={SideBarMain} />
+              <Route path='/note/:noteid' component={SideBarNote} />
               <Route path='/AddNote' component={SideBarMain} />
               <Route path='/AddFolder' component={SideBarMain} />
               <Route component={SideBarMain} />
