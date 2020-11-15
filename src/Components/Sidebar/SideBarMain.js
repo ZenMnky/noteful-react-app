@@ -23,7 +23,7 @@ class SideBarMain extends Component{
 
                 return(
                         
-                    <div id="sidebar" className="sidebar">
+                    <div id="sidebar">
                         <h3>Sidebar Main</h3>
                         <ul>
                             {folderLinks}

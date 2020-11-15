@@ -43,18 +43,17 @@ a, li {
     
 }
 
-@media all and (min-width: 800px){
-    .sideBar{
-        height: 100vh;
-        min-width: 25vw;
-    }
-  }
-
-
-
-
 .active {
     font-size: large;
     background: whitesmoke;
 }
+
+@media all and (min-width: 700px){
+    .sideBar{
+        height: 100vh;
+        min-width: 25vw;
+
+    }
+  }
+
 
