@@ -1,7 +1,6 @@
 // Dependencies
 import React, { Component } from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
-import DATA from '../../dummy-store';
 
 
 
@@ -15,10 +14,10 @@ import MainAddFolder from '../Main/MainAddFolder';
 
 // View: SideBar
 import SideBarMain from '../Sidebar/SideBarMain';
-import SideBarNote from '../Sidebar/SideBarNote';
-import SideBarFolder from '../Sidebar/SideBarFolder';
-import SideBarAddNote from '../Sidebar/SideBarAddNote';
-import SideBarAddFolder from '../Sidebar/SideBarAddFolder';
+// import SideBarNote from '../Sidebar/SideBarNote';
+// import SideBarFolder from '../Sidebar/SideBarFolder';
+// import SideBarAddNote from '../Sidebar/SideBarAddNote';
+// import SideBarAddFolder from '../Sidebar/SideBarAddFolder';
 
 // View: Page not ound
 import fourOhFour from '../ErrorComponent/fourOhFour';
@@ -54,10 +53,10 @@ class App extends Component {
           <section classname="sideBar">
             <Switch>
               <Route exact path='/' component={SideBarMain}/>
-              <Route path='/folder/:folderid' component={SideBarFolder} />
-              <Route path='/note/:noteid' component={SideBarNote} />
-              <Route path='/AddNote' component={SideBarAddNote} />
-              <Route path='/AddFolder' component={SideBarAddFolder} />
+              <Route path='/folder/:folderid' component={SideBarMain} />
+              <Route path='/note/:noteid' component={SideBarMain} />
+              <Route path='/AddNote' component={SideBarMain} />
+              <Route path='/AddFolder' component={SideBarMain} />
               <Route component={SideBarMain} />
             </Switch>
           </section>
