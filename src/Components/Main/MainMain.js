@@ -7,7 +7,7 @@ class MainMain extends Component{
     render(){
         return(
             <Consumer>
-                { ({notes, handleDeleteNote}) => {
+                { ({notes,handleDeleteNote, deleteNoteRequest}) => {
                     let noteList = notes.map(note => {
                         let {id, name, modified} = note;
                         return(
@@ -15,7 +15,7 @@ class MainMain extends Component{
                                 <Link to={`/note/${id}`}><h2>{name}</h2></Link>
                                 <p>Last modified: { moment(modified).calendar() }</p>
                                 <input onClick={() => {
-                                    handleDeleteNote(id)
+                                    deleteNoteRequest(id, handleDeleteNote)
                                 }} type='button' value='Delete Note' />
                             </div>
                         );
