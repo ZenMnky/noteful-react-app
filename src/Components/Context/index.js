@@ -22,16 +22,43 @@ export class Provider extends Component {
 
       handleDeleteNote = (id) => {
         // this.props.history.push('/')
-  
+
         this.setState(prevState => {
           return {
             notes: prevState.notes.filter(note => note.id !== id)
-          }
-        
+          }        
         })
-  
+      }
+      
+      /**
+       * deleteNoteRequest
+       * Delete note from API and local state
+       * @param {number} noteId
+       * @param {function} deleteCallBack - uses the noteId to delete note from local staet 
+       */
+      deleteNoteRequest = (noteId, deleteCallBack) => {
+        fetch(API_ENDPOINT + `/notes/${noteId}`, {
+          method: 'DELETE',
+          headers: {
+            'content-type': 'application/json'
+          }
+        })
+        .then(res => {
+          if(!res.ok){
+            return res.json().then(error => {throw error})
+          }
+          return res.json();
+        })
+        .then(data => {
+          //remove from local state
+          deleteCallBack(noteId)
+        })
+        .catch(error => {
+          console.error(error)
+        })
       }
     
+      
     componentDidMount = () => {
     
       /*=============================================
@@ -77,14 +104,10 @@ export class Provider extends Component {
         this.setState({notes: noteData})
       })
       .catch(error => this.setState({ error }))
+      /*=====  End of FETCH DATA  ======*/
+      
     }
       
-      
-      
-      /*=====  End of FETCH DATA  ======*/
-    
-    
-    
 
     render(){
         const contextValues = {
