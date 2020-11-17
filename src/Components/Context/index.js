@@ -58,7 +58,7 @@ export class Provider extends Component {
         })
       }
     
-      
+
     componentDidMount = () => {
     
       /*=============================================
@@ -112,7 +112,8 @@ export class Provider extends Component {
     render(){
         const contextValues = {
             ...this.state,
-            handleDeleteNote: this.handleDeleteNote
+            handleDeleteNote: this.handleDeleteNote,
+            deleteNoteRequest: this.deleteNoteRequest
         }
 
         return(
