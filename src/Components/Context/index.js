@@ -19,11 +19,26 @@ export class Provider extends Component {
           folders: [...this.state.folders, folder]
         })
       }
-    /**
-     * implement two fetch requests: /folders and /notes endpoints
-     */
+
+      handleDeleteNote = (id) => {
+        // this.props.history.push('/')
+  
+        this.setState(prevState => {
+          return {
+            notes: prevState.notes.filter(note => note.id !== id)
+          }
+        
+        })
+  
+      }
+    
     componentDidMount = () => {
-      //fetch /folders
+    
+      /*=============================================
+      =            FETCH DATA            =
+      =============================================*/
+      
+      // FETCH FOLDERS
       fetch(API_ENDPOINT + '/folders', {
         method: 'GET',
         headers: {
@@ -36,7 +51,6 @@ export class Provider extends Component {
           throw new Error(res.status)
         }
         //other wise, return parsed response
-        console.log('response okay!')
         return res.json();
         
       })
@@ -46,26 +60,31 @@ export class Provider extends Component {
       .catch(error => this.setState({ error }))
       
 
-      //fetch /notes
-      //parse to data
-      //update state
-      this.setState({
-          notes: DATA.notes,
-          
-      })
-    }
-    
-    handleDeleteNote = (id) => {
-      // this.props.history.push('/')
-
-      this.setState(prevState => {
-        return {
-          notes: prevState.notes.filter(note => note.id !== id)
+      // FETCH NOTES
+      fetch(API_ENDPOINT + '/notes', {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json'
         }
-      
       })
-
+      .then(res => {
+        if(!res.ok){
+          throw new Error(res.status)
+        }
+        return res.json();
+      })
+      .then(noteData => {
+        this.setState({notes: noteData})
+      })
+      .catch(error => this.setState({ error }))
     }
+      
+      
+      
+      /*=====  End of FETCH DATA  ======*/
+    
+    
+    
 
     render(){
         const contextValues = {
