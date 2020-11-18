@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import cuid from 'cuid';
+import PropTypes from 'prop-types';
 
 export const NotefulContext = React.createContext();
 const API_ENDPOINT = 'http://localhost:9090';
@@ -27,7 +28,6 @@ export class Provider extends Component {
       }
 
       handleDeleteNote = (id) => {
-        // this.props.history.push('/')
 
         this.setState(prevState => {
           return {
@@ -216,6 +216,10 @@ export class Provider extends Component {
             </NotefulContext.Provider>
         );
     }
+}
+
+Provider.propTypes = {
+  children: PropTypes.element
 }
 
 export const { Consumer } = NotefulContext;

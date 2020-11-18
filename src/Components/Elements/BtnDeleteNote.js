@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Consumer} from '../Context';
+import PropTypes from 'prop-types';
 
 class BtnDeleteNote extends Component {
     render(){
@@ -23,6 +24,10 @@ class BtnDeleteNote extends Component {
         )
     }
 
+}
+
+BtnDeleteNote.propTypes = {
+    id: PropTypes.string.isRequired
 }
 
 export default BtnDeleteNote;

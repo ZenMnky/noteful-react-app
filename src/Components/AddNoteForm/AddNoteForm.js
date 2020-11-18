@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Consumer, NotefulContext } from '../Context';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
  class AddNote extends Component{
@@ -133,6 +134,10 @@ import { withRouter } from 'react-router-dom';
             </Consumer>
         )
     }
+}
+
+AddNote.propTypes = {
+    history: PropTypes.object.isRequired
 }
 
 export default withRouter(AddNote);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Consumer, NotefulContext } from '../Context'
+import PropTypes from 'prop-types';
+
 class AddFolderForm extends Component {
     static contextType = NotefulContext;
     
@@ -80,6 +82,10 @@ class AddFolderForm extends Component {
             
         )
     }
+}
+
+AddFolderForm.propTypes = {
+    history: PropTypes.object.isRequired
 }
 
 export default AddFolderForm;

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Consumer} from '../Context';
-import moment from 'moment';
 import {Link} from 'react-router-dom';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 class MainFolder extends Component{
     render(){
         return(
@@ -31,6 +32,10 @@ class MainFolder extends Component{
             </Consumer>
         )
     }
+}
+
+MainFolder.propTypes = {
+    match: PropTypes.object.isRequired
 }
 
 export default MainFolder;
