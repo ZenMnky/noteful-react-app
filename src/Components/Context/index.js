@@ -60,6 +60,12 @@ export class Provider extends Component {
         })
       }
 
+      /**
+       * addFolderRequest
+       * Adds new Folder to API & Local State
+       * @param {string} folderName 
+       * @param {function} addFolderCB - add folder object to local storage
+       */
       addFolderRequest = (folderName, addFolderCB) => {
         let newFolder = {
           name: folderName,
