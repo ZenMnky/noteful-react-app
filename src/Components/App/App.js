@@ -13,9 +13,6 @@ import MainAddFolder from '../Main/MainAddFolder';
 // View: SideBar
 import SideBarMain from '../Sidebar/SideBarMain';
 import SideBarNote from '../Sidebar/SideBarNote';
-// import SideBarFolder from '../Sidebar/SideBarFolder';
-// import SideBarAddNote from '../Sidebar/SideBarAddNote';
-// import SideBarAddFolder from '../Sidebar/SideBarAddFolder';
 
 // View: Error handling
 import fourOhFour from '../ErrorComponent/fourOhFour';

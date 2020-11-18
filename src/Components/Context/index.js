@@ -106,7 +106,7 @@ export class Provider extends Component {
        * Adds new Folder to API & Local State
        * @param {string} title 
        * @param {string} content
-       * @param {string} folder
+       * @param {string} folder - folderId
        * 
        */
       addNoteRequest = (title, content, folder) => {
