@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
 
 
-
-
 // View: Main
 import MainMain from '../Main/MainMain';
 import MainNote from '../Main/MainNote';
@@ -19,8 +17,9 @@ import SideBarNote from '../Sidebar/SideBarNote';
 // import SideBarAddNote from '../Sidebar/SideBarAddNote';
 // import SideBarAddFolder from '../Sidebar/SideBarAddFolder';
 
-// View: Page not ound
+// View: Error handling
 import fourOhFour from '../ErrorComponent/fourOhFour';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 // Styles
 import 'normalize.css';
@@ -41,24 +40,28 @@ class App extends Component {
       <main className="flexContainer">
 
           <section className="mainContent NoteContainer">
-            <Switch>
-              <Route exact path='/' component={MainMain}/>
-              <Route path='/folder/:folderid' component={MainFolder} />
-              <Route path='/note/:noteid' component={MainNote} />
-              <Route path='/AddNote' component={MainAddNote} />
-              <Route path='/AddFolder' component={MainAddFolder} />
-              <Route component={fourOhFour} />
-            </Switch>
+            <ErrorBoundary>
+              <Switch>
+                <Route exact path='/' component={MainMain}/>
+                <Route path='/folder/:folderid' component={MainFolder} />
+                <Route path='/note/:noteid' component={MainNote} />
+                <Route path='/AddNote' component={MainAddNote} />
+                <Route path='/AddFolder' component={MainAddFolder} />
+                <Route component={fourOhFour} />
+              </Switch>
+            </ErrorBoundary>
           </section>
           <section className="sideBar">
-            <Switch>
-              <Route exact path='/' component={SideBarMain}/>
-              <Route path='/folder/:folderid' component={SideBarMain} />
-              <Route path='/note/:noteid' component={SideBarNote} />
-              <Route path='/AddNote' component={SideBarMain} />
-              <Route path='/AddFolder' component={SideBarMain} />
-              <Route component={SideBarMain} />
-            </Switch>
+            <ErrorBoundary>
+              <Switch>
+                <Route exact path='/' component={SideBarMain}/>
+                <Route path='/folder/:folderid' component={SideBarMain} />
+                <Route path='/note/:noteid' component={SideBarNote} />
+                <Route path='/AddNote' component={SideBarMain} />
+                <Route path='/AddFolder' component={SideBarMain} />
+                <Route component={SideBarMain} />
+              </Switch>
+            </ErrorBoundary>
           </section>
 
       </main>

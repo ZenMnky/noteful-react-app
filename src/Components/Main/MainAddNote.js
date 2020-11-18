@@ -5,7 +5,8 @@ class MainAddNote extends Component{
     render(){
         return(
             <div>
-                <h1>MainAddNote</h1>
+                <h2>Add Note</h2>
+                <br />
                 <AddNoteForm />
             </div>
         )
