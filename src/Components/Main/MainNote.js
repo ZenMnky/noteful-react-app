@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Consumer} from '../Context'
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 class MainNote extends Component{
     render(){
@@ -38,6 +39,11 @@ class MainNote extends Component{
             
         )
     }
+}
+
+MainNote.propTypes = {
+    match: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
 }
 
 export default MainNote;
