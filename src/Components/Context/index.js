@@ -111,11 +111,15 @@ export class Provider extends Component {
        */
       addNoteRequest = (title, content, folder) => {
         //construct body data
+
+        let date = new Date();
+        let isoDate = date.toISOString();
+
         let newNote = {
           content: content,
           folderId: folder,
           id: cuid(), //generates random id
-          modified: Date.now(), // 🚧 needs work. what format does this need to be in? :-\
+          modified: isoDate,
           name: title
           
         }
