@@ -104,14 +104,20 @@ export class Provider extends Component {
       /**
        * addNoteRequest
        * Adds new Folder to API & Local State
-       * @param {string} noteName 
-       * @param {function} addNoteCB - add folder object to local storage
+       * @param {string} title 
+       * @param {string} content
+       * @param {string} folder
+       * 
        */
-      addNoteRequest = (noteName, addNoteCB) => {
+      addNoteRequest = (title, content, folder) => {
         //construct body data
         let newNote = {
-          name: noteName,
-          id: cuid() //generates random id
+          content: content,
+          folderId: folder,
+          id: cuid(), //generates random id
+          modified: Date.now(), // 🚧 needs work. what format does this need to be in? :-\
+          name: title
+          
         }
 
         fetch(API_ENDPOINT + '/notes', {
@@ -129,7 +135,7 @@ export class Provider extends Component {
         })
         .then(data => {
           //update local state
-          addNoteCB(newNote)
+          this.addNote(newNote)
         })
         .catch(error => {
           console.error(error)
@@ -195,6 +201,8 @@ export class Provider extends Component {
             deleteNoteRequest: this.deleteNoteRequest,
             addFolder: this.addFolder,
             addFolderRequest: this.addFolderRequest,
+            addNoteRequest: this.addNoteRequest,
+            addNote: this.addNote,
             testContext: () => {console.log('context test!')}
         }
 

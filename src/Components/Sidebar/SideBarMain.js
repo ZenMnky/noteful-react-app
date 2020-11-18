@@ -37,7 +37,7 @@ class SideBarMain extends Component{
                         </button>
                         <button 
                             type="button"
-                            onClick={() => {console.log('bang!')}}
+                            onClick={() => { this.props.history.push('/AddNote') }}
                         >
                             Add Note
                         </button>
