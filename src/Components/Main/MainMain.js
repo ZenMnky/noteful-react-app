@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Consumer} from '../Context'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import AddNoteBtn from '../Elements/BtnAddNote';
 
 class MainMain extends Component{
     render(){
@@ -23,7 +24,8 @@ class MainMain extends Component{
                     return(
                         <div>
                             {noteList}
-                            <input type="button" value="Add Note" />
+                            {/* <input type="button" value="Add Note" /> */}
+                            <AddNoteBtn />
                         </div>
                     );
                 }}

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Consumer} from '../Context'
 import {NavLink} from 'react-router-dom';
+import AddNoteBtn from '../Elements/BtnAddNote';
+import AddFolderBtn from '../Elements/BtnAddFolder';
 import './css/SideBarStyles.css';
 
 class SideBarMain extends Component{
@@ -10,16 +12,12 @@ class SideBarMain extends Component{
                 {context => {
                 let folderLinks = context.folders.map(folder => {
                     return(
-                        // <li id={folder.id}>
                             <NavLink 
                                 to={`/folder/${folder.id}`}
                                 key={folder.id}
-                            >
-                            
+                            >           
                                 {folder.name}                   
-                            
                             </NavLink>
-                        // </li>
                     )
                 })
 
@@ -29,18 +27,8 @@ class SideBarMain extends Component{
                         <ul>
                             {folderLinks}
                         </ul>
-                        <button 
-                            type="button" 
-                            onClick={() => {this.props.history.push('/AddFolder')}}
-                        >
-                            Add Folder
-                        </button>
-                        <button 
-                            type="button"
-                            onClick={() => { this.props.history.push('/AddNote') }}
-                        >
-                            Add Note
-                        </button>
+                        <AddFolderBtn />
+                        <AddNoteBtn />
                     </div>
                 
                     )
