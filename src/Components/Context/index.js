@@ -20,6 +20,12 @@ export class Provider extends Component {
         })
       }
 
+      addNote = (note) => {
+        this.setState({
+          notes: [...this.state.notes, note]          
+        })
+      }
+
       handleDeleteNote = (id) => {
         // this.props.history.push('/')
 
@@ -67,9 +73,10 @@ export class Provider extends Component {
        * @param {function} addFolderCB - add folder object to local storage
        */
       addFolderRequest = (folderName, addFolderCB) => {
+        //construct body data
         let newFolder = {
           name: folderName,
-          id: cuid()
+          id: cuid() //generates random id
         }
 
         fetch(API_ENDPOINT + '/folders', {
@@ -94,6 +101,40 @@ export class Provider extends Component {
         })
       }
 
+      /**
+       * addNoteRequest
+       * Adds new Folder to API & Local State
+       * @param {string} noteName 
+       * @param {function} addNoteCB - add folder object to local storage
+       */
+      addNoteRequest = (noteName, addNoteCB) => {
+        //construct body data
+        let newNote = {
+          name: noteName,
+          id: cuid() //generates random id
+        }
+
+        fetch(API_ENDPOINT + '/notes', {
+          method: 'POST',
+          body: JSON.stringify(newNote),
+          headers: {
+            'content-type': 'application/json'
+          }
+        })
+        .then(res => {
+          if(!res.ok){
+            return res.json().then(error => {throw error})
+          }
+          return res.json();
+        })
+        .then(data => {
+          //update local state
+          addNoteCB(newNote)
+        })
+        .catch(error => {
+          console.error(error)
+        })
+      }
     
     
 
