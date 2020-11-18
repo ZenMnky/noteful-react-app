@@ -1,10 +1,8 @@
 # Noteful 
-## 🚧 _Under development_ 🚧
-
 ## Description
 - Simple note application built using React and demonstrating dynamic routing.
 
-## Note:
+## Additional Dependency:
 - Requires local [Noteful JSON Server](https://github.com/tomatau/noteful-json-server) to function
 
 
