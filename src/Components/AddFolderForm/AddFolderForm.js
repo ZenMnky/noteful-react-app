@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Consumer, NotefulContext } from '../Context'
+
 
 class AddFolderForm extends Component {
+    static contextType = NotefulContext;
+    
     state = {
         folderName: {
             value: '',
@@ -39,7 +43,7 @@ class AddFolderForm extends Component {
         event.preventDefault();
 
         //post to API and to Store
-
+        this.context.addFolderRequest(this.state.folderName.value, this.context.addFolder)
         //rediret to home
         this.props.history.push('/');
     }
@@ -48,28 +52,35 @@ class AddFolderForm extends Component {
 
     render(){
         return(
-            <form 
-                id="addFolderForm"
-                onSubmit={event => this.handleSubmit(event)}
-            >
-                <label htmlFor="name">New Folder Name:</label>
-                <input 
-                    type="text" 
-                    name="name" 
-                    id="name"
-                    value= {this.state.value}
-                    onChange={(event) => this.updateName(event.target.value)}
-                />
-                {/* {this.state.folderName.touched && (
-                    <ValidationError message={this.validateName()} />
-                } */}
-                <button
-                    type="submit"
-                    disabled={this.validateName()}
-                >
-                    Add New Folder
-                </button>
-            </form>
+            <Consumer>
+                {(context) => {
+                    return(
+                        <form 
+                            id="addFolderForm"
+                            onSubmit={event => this.handleSubmit(event)}
+                        >
+                            <label htmlFor="name">New Folder Name:</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name"
+                                value= {this.state.folderName.value}
+                                onChange={(event) => this.updateName(event.target.value)}
+                            />
+                            {/* {this.state.folderName.touched && (
+                                <ValidationError message={this.validateName()} />
+                            } */}
+                            <button
+                                type="submit"
+                                disabled={this.validateName()}
+                            >
+                                Add New Folder
+                            </button>
+                        </form>
+                    )
+                }}
+            </Consumer>
+            
         )
     }
 }
