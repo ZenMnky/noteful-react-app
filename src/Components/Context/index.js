@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import DATA from '../../dummy-store';
+import cuid from 'cuid';
 
-const NotefulContext = React.createContext();
+export const NotefulContext = React.createContext();
 const API_ENDPOINT = 'http://localhost:9090';
 
 export class Provider extends Component {
@@ -29,6 +29,8 @@ export class Provider extends Component {
           }        
         })
       }
+
+
       
       /**
        * deleteNoteRequest
@@ -57,6 +59,36 @@ export class Provider extends Component {
           console.error(error)
         })
       }
+
+      addFolderRequest = (folderName, addFolderCB) => {
+        let newFolder = {
+          name: folderName,
+          id: cuid()
+        }
+
+        fetch(API_ENDPOINT + '/folders', {
+          method: 'POST',
+          body: JSON.stringify(newFolder),
+          headers: {
+            'content-type': 'application/json'
+          }
+        })
+        .then(res => {
+          if(!res.ok){
+            return res.json().then(error => {throw error})
+          }
+          return res.json();
+        })
+        .then(data => {
+          //update local state
+          addFolderCB(newFolder)
+        })
+        .catch(error => {
+          console.error(error)
+        })
+      }
+
+    
     
 
     componentDidMount = () => {
@@ -113,7 +145,10 @@ export class Provider extends Component {
         const contextValues = {
             ...this.state,
             handleDeleteNote: this.handleDeleteNote,
-            deleteNoteRequest: this.deleteNoteRequest
+            deleteNoteRequest: this.deleteNoteRequest,
+            addFolder: this.addFolder,
+            addFolderRequest: this.addFolderRequest,
+            testContext: () => {console.log('context test!')}
         }
 
         return(
