@@ -3,6 +3,7 @@ import {Consumer} from '../Context';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 import PropTypes from 'prop-types';
+import cuid from 'cuid';
 class MainFolder extends Component{
     render(){
         return(
@@ -13,7 +14,7 @@ class MainFolder extends Component{
                     let folderNotes = context.notes.filter(note => note.folderId === folderid);
                     let noteItems = folderNotes.map(note => {
                         return(
-                            <div className="noteListItem" >
+                            <div key={cuid()} className="noteListItem" >
                                 <Link to={`/note/${note.id}`}><h2>{note.name}</h2></Link>
                                 <p>Last modified: { moment(note.modified).calendar() }</p>
                                 <input onClick={() => {
