@@ -29,8 +29,18 @@ class SideBarMain extends Component{
                         <ul>
                             {folderLinks}
                         </ul>
-                        <input type="button" value="Add Folder" />
-                        <input type="button" value="Add Note" />
+                        <button 
+                            type="button" 
+                            onClick={() => {this.props.history.push('/AddFolder')}}
+                        >
+                            Add Folder
+                        </button>
+                        <button 
+                            type="button"
+                            onClick={() => {console.log('bang!')}}
+                        >
+                            Add Note
+                        </button>
                     </div>
                 
                     )
