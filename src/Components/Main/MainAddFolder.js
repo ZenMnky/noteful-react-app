@@ -5,7 +5,8 @@ class MainAddFolder extends Component{
     render(){
         return(
             <div>
-                <h1>MainAddFolder</h1>
+                <h2>Add Folder</h2>
+                <br />
                 <AddFolderForm />
             </div>
         )
