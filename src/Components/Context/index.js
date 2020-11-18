@@ -20,6 +20,12 @@ export class Provider extends Component {
         })
       }
 
+      addNote = (note) => {
+        this.setState({
+          notes: [...this.state.notes, note]          
+        })
+      }
+
       handleDeleteNote = (id) => {
         // this.props.history.push('/')
 
@@ -60,10 +66,17 @@ export class Provider extends Component {
         })
       }
 
+      /**
+       * addFolderRequest
+       * Adds new Folder to API & Local State
+       * @param {string} folderName 
+       * @param {function} addFolderCB - add folder object to local storage
+       */
       addFolderRequest = (folderName, addFolderCB) => {
+        //construct body data
         let newFolder = {
           name: folderName,
-          id: cuid()
+          id: cuid() //generates random id
         }
 
         fetch(API_ENDPOINT + '/folders', {
@@ -88,6 +101,50 @@ export class Provider extends Component {
         })
       }
 
+      /**
+       * addNoteRequest
+       * Adds new Folder to API & Local State
+       * @param {string} title 
+       * @param {string} content
+       * @param {string} folder
+       * 
+       */
+      addNoteRequest = (title, content, folder) => {
+        //construct body data
+
+        let date = new Date();
+        let isoDate = date.toISOString();
+
+        let newNote = {
+          content: content,
+          folderId: folder,
+          id: cuid(), //generates random id
+          modified: isoDate,
+          name: title
+          
+        }
+
+        fetch(API_ENDPOINT + '/notes', {
+          method: 'POST',
+          body: JSON.stringify(newNote),
+          headers: {
+            'content-type': 'application/json'
+          }
+        })
+        .then(res => {
+          if(!res.ok){
+            return res.json().then(error => {throw error})
+          }
+          return res.json();
+        })
+        .then(data => {
+          //update local state
+          this.addNote(newNote)
+        })
+        .catch(error => {
+          console.error(error)
+        })
+      }
     
     
 
@@ -148,6 +205,8 @@ export class Provider extends Component {
             deleteNoteRequest: this.deleteNoteRequest,
             addFolder: this.addFolder,
             addFolderRequest: this.addFolderRequest,
+            addNoteRequest: this.addNoteRequest,
+            addNote: this.addNote,
             testContext: () => {console.log('context test!')}
         }
 

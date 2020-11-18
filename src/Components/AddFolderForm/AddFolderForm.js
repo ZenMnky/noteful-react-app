@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import { Consumer, NotefulContext } from '../Context'
-
-
 class AddFolderForm extends Component {
     static contextType = NotefulContext;
     
@@ -85,4 +82,4 @@ class AddFolderForm extends Component {
     }
 }
 
-export default withRouter(AddFolderForm);
+export default AddFolderForm;
