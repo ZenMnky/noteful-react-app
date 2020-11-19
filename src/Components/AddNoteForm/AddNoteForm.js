@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Consumer, NotefulContext } from '../Context';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import cuid from 'cuid';
 
 
  class AddNote extends Component{
@@ -81,6 +82,7 @@ import PropTypes from 'prop-types';
                     let folderOptions = context.folders.map(folder => {
                         return(
                             <option 
+                                key={cuid()}
                                 value={folder.name}
                                 data-folderId={folder.id}
                             >
