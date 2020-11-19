@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Consumer, NotefulContext } from '../Context';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import cuid from 'cuid';
 
 
  class AddNote extends Component{
@@ -46,7 +45,6 @@ import cuid from 'cuid';
 
     setInitialFolderValue(folderName){
         let folderId = this.getFolderIdByName(folderName);
-        console.log(folderId);
         this.setState({folder: {value: folderId}})
     }
 
@@ -95,8 +93,7 @@ import cuid from 'cuid';
                     //generate a folder select-option for each
                     let folderOptions = context.folders.map(folder => {
                         return(
-                            <option 
-                                key={cuid()}
+                            <option
                                 value={folder.name}
                                 key={folder.id}
                                 data-folderid={folder.id}
