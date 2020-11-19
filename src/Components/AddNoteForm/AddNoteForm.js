@@ -84,7 +84,7 @@ import cuid from 'cuid';
                             <option 
                                 key={cuid()}
                                 value={folder.name}
-                                data-folderId={folder.id}
+                                data-folderid={folder.id}
                             >
                                 {folder.name}
                             </option>
