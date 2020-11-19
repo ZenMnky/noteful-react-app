@@ -44,6 +44,12 @@ import cuid from 'cuid';
         return folder.id;
     }
 
+    setInitialFolderValue(folderName){
+        let folderId = this.getFolderIdByName(folderName);
+        console.log(folderId);
+        this.setState({folder: {value: folderId}})
+    }
+
     /*=====  End of form state-update handlers  ======*/
     
     /*=============================================
@@ -73,6 +79,14 @@ import cuid from 'cuid';
         //rediret to home
         this.props.history.push('/');
     }
+
+    componentDidMount(){
+        //assign the folderId of the first indexed folder to state
+        //any changes to the selected folder will be handled with an onChange event handler
+        let firstFolder = this.context.folders[0].name
+        this.setInitialFolderValue(firstFolder);
+    }
+
     render(){
         return(
             <Consumer>
@@ -84,7 +98,9 @@ import cuid from 'cuid';
                             <option 
                                 key={cuid()}
                                 value={folder.name}
+                                key={folder.id}
                                 data-folderid={folder.id}
+                                
                             >
                                 {folder.name}
                             </option>
