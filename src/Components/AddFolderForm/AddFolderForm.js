@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Consumer, NotefulContext } from '../Context'
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 
 class AddFolderForm extends Component {
     static contextType = NotefulContext;
@@ -88,4 +89,4 @@ AddFolderForm.propTypes = {
     history: PropTypes.object.isRequired
 }
 
-export default AddFolderForm;
+export default withRouter(AddFolderForm);
