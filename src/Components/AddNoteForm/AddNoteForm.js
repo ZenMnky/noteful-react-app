@@ -43,6 +43,12 @@ import PropTypes from 'prop-types';
         return folder.id;
     }
 
+    setInitialFolderValue(folderName){
+        let folderId = this.getFolderIdByName(folderName);
+        console.log(folderId);
+        this.setState({folder: {value: folderId}})
+    }
+
     /*=====  End of form state-update handlers  ======*/
     
     /*=============================================
