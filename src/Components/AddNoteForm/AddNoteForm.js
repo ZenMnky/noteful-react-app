@@ -78,6 +78,14 @@ import PropTypes from 'prop-types';
         //rediret to home
         this.props.history.push('/');
     }
+
+    componentDidMount(){
+        //assign the folderId of the first indexed folder to state
+        //any changes to the selected folder will be handled with an onChange event handler
+        let firstFolder = this.context.folders[0].name
+        this.setInitialFolderValue(firstFolder);
+    }
+
     render(){
         return(
             <Consumer>
