@@ -82,7 +82,9 @@ import PropTypes from 'prop-types';
                         return(
                             <option 
                                 value={folder.name}
+                                key={folder.id}
                                 data-folderid={folder.id}
+                                
                             >
                                 {folder.name}
                             </option>
